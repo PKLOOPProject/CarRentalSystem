@@ -36,16 +36,26 @@ void start_carload(Car list[])
     list[i].Vehicle_status=Car_stat[i];
     }
 }
-
+void start_truckload(Truck list[])
+{
+    string truck_color[9]={"White","Grey","Red","Yellow","Blue","Black","Purple","Pearl", "White"};
+    int truck_size[9]={14,14,14,46,46,46,56,56,56};
+    bool truck_stat[9]={1,1,1,1,1,1,1,1,1};
+    for (int i = 0; i < 9; i++)
+    {
+    list[i].Truck_size=truck_size[i];
+    list[i].Vehicle_status=truck_stat[i];
+    }
+}
 void truckmenu(Truck Truck_list[])
 {
     cout<<"\t\t\t----------------------------------------------\n";
-    cout<<"\t\t\tWelcome to the OOP truck rental company ,Choose the truck you would like from the menu : "<<endl<<flush;
+    cout<<"\t\t\tWelcome to the OOP truck rental company ,Choose the truck size you would like from the menu : "<<endl<<flush;
     int num=1;
     for (int i = 0; i < 10; i++)
     {
         cout<<"\t\t\t";
-        cout<<"Enter "<<num<<" - To Select "<<Truck_list[i].Vehicle_maker<<endl<<flush;
+        cout<<"Enter "<<num<<" - To Select size "<<Truck_list[i].Truck_size<<endl<<flush;
         num++;
     }
 }

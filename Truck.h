@@ -7,7 +7,7 @@ using namespace std;
 class Truck: public Vehicle
 {
     public:
-    int storage_area;
+    int Truck_size;
 
 };
 #endif

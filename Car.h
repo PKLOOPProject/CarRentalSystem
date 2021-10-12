@@ -10,6 +10,6 @@ class Car: public Vehicle
     void add_car(string model, string maker, string color, string type, string seat_count);
     string Car_seats;
     string Car_type;
-
+    
 };
 #endif

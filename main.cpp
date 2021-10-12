@@ -10,13 +10,15 @@ using namespace std;
 extern void carmenu(Car object[10]);
 
 extern void start_carload(Car object[10]);
-extern void truckmenu(Truck Truck_list[10]);
+extern void truckmenu(Truck Truck_list[9]);
+extern void start_truckload(Truck list[]);
 int main()
 {
     Car car_list[10];
-    Truck Truck_list[10];
+    Truck Truck_list[9];
     int car_or_truck=0;
     start_carload(car_list);
+    start_truckload(Truck_list);
     string decision="yes";
     
     cout<<"\t\t\t----------------------------------------------\n";
@@ -36,7 +38,16 @@ int main()
         
         if (car_or_truck==1)
         {
-            /* code */
+            truckmenu(Truck_list);
+            int selected_size;
+            cout<<"Your Choice: ";
+            cin>>selected_size;
+            while(selected_size<=0||selected_size>=10)
+            {
+                cout<<"Please Enter Choice Again"<<endl;
+                cout<<"Your Choice: ";
+                cin>>selected_size;
+            }
         }
         else if (car_or_truck==2)
         {
@@ -52,6 +63,7 @@ int main()
             }
         
         system("clear");
+        
         }
     }
     
