@@ -7,6 +7,7 @@ using namespace std;
 class Truck: public Vehicle
 {
     public:
+    // virtual void display_details(int selected_car,Truck list[]);
     int Truck_size;
 
 };

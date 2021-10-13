@@ -14,7 +14,7 @@ void carmenu(Car list[])
     for (int i = 0; i < 10; i++)
     {
         cout<<"\t\t\t";
-        cout<<"Enter "<<num<<" - To Select "<<list[i].Vehicle_maker<<endl<<flush;
+        cout<<"Enter "<<num<<" - To Select "<<list[i].Vehicle_maker<<" "<<list[i].Vehicle_model<<endl<<flush;
         num++;
     }
     
@@ -52,7 +52,7 @@ void truckmenu(Truck Truck_list[])
     cout<<"\t\t\t----------------------------------------------\n";
     cout<<"\t\t\tWelcome to the OOP truck rental company ,Choose the truck size you would like from the menu : "<<endl<<flush;
     int num=1;
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 9; i++)
     {
         cout<<"\t\t\t";
         cout<<"Enter "<<num<<" - To Select size "<<Truck_list[i].Truck_size<<endl<<flush;

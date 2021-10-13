@@ -6,7 +6,7 @@ using namespace std;
 class Vehicle
 {
     public:
-    virtual void display_details();
+    // virtual void display_details();
     string Vehicle_model;
     string Vehicle_maker;
     string Vehicle_color;
