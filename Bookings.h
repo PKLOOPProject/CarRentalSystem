@@ -9,11 +9,11 @@ class Bookings
 {
     public:
     string id_maker(int info_booking, Bookings list[]);
-    void set_id();
-    void set_name();
-    void set_sdate();
-    void set_edate();
-    void set_status();
+    void set_id(string lan);
+    void set_name(string fullname);
+    void set_sdate(string start);
+    void set_edate(string end);
+    void set_status(bool position);
     void set_remainder();
     void set_chosencar();
 
