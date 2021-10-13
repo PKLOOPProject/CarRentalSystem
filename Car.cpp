@@ -9,17 +9,33 @@ using namespace std;
 void Car::display_details(int selected_car,Car list[])
 {
     cout<<"The Car you selected is "<<endl;
-    cout<<"\t\t\tCompany: "<<list[selected_car].Vehicle_maker<<endl;
-    cout<<"\t\t\tModel: "<<list[selected_car].Vehicle_model<<endl;
-    cout<<"\t\t\tColor: "<<list[selected_car].Vehicle_color<<endl;
-    if (list[selected_car].Vehicle_status==1)
+    cout<<"\t\t\tCompany: "<<list[selected_car].get_maker()<<endl;
+    cout<<"\t\t\tModel: "<<list[selected_car].get_model()<<endl;
+    cout<<"\t\t\tColor: "<<list[selected_car].get_color()<<endl;
+    if (list[selected_car].get_status()==1)
     {
-        cout<<"\t\t\tStatus: Avaliable";
+        cout<<"\t\t\tStatus: Avaliable"<<endl;
     }
-    else if (list[selected_car].Vehicle_status==0)
+    else if (list[selected_car].get_status()==0)
     {
-        cout<<"\t\t\tStatus: Unavaliable";
+        cout<<"Status: Unavaliable"<<endl;
     }
     
     
+}
+int Car::get_car_seats()
+{
+    return carseats;
+}
+void Car::set_car_seats(int number)
+{
+    carseats=number;
+}
+string Car::get_car_type()
+{
+    return cartype;
+}
+void Car::set_car_type(string type)
+{
+    cartype=type;
 }

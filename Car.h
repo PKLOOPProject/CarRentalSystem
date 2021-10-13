@@ -7,10 +7,14 @@ using namespace std;
 class Car: public Vehicle
 {
     public:
-    virtual void display_details(int selected_car,Car list[]);
-    // void add_car(string model, string maker, string color, string type, string seat_count);
-    string Car_seats;
-    string Car_type;
+    void display_details(int selected_car,Car list[]);
+    int get_car_seats();
+    void set_car_seats(int number);
+    string get_car_type();
+    void set_car_type(string type);
+    private:
+    int carseats;
+    string cartype;
     
 };
 #endif

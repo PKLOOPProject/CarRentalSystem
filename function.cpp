@@ -14,7 +14,7 @@ void carmenu(Car list[])
     for (int i = 0; i < 10; i++)
     {
         cout<<"\t\t\t";
-        cout<<"Enter "<<num<<" - To Select "<<list[i].Vehicle_maker<<" "<<list[i].Vehicle_model<<endl<<flush;
+        cout<<"Enter "<<num<<" - To Select "<<list[i].get_maker()<<" "<<list[i].get_model()<<endl<<flush;
         num++;
     }
     
@@ -29,11 +29,11 @@ void start_carload(Car list[])
     bool Car_stat[10]={1,1,1,1,1,1,1,1,1,1};
     for (int i = 0; i < 10; i++)
     {
-    list[i].Vehicle_maker=Car_list[i];
-    list[i].Vehicle_model=Car_makelist[i];
-    list[i].Vehicle_color=Car_color[i];
-    list[i].Car_type=Car_type[i];
-    list[i].Vehicle_status=Car_stat[i];
+        list[i].set_maker(Car_list[i]);
+        list[i].set_model(Car_makelist[i]);
+        list[i].set_color(Car_color[i]);
+        list[i].set_car_type(Car_type[i]);
+        list[i].set_status(Car_stat[i]);
     }
 }
 void start_truckload(Truck list[])
@@ -43,8 +43,8 @@ void start_truckload(Truck list[])
     bool truck_stat[9]={1,1,1,1,1,1,1,1,1};
     for (int i = 0; i < 9; i++)
     {
-    list[i].Truck_size=truck_size[i];
-    list[i].Vehicle_status=truck_stat[i];
+        list[i].set_size(truck_size[i]);
+        list[i].set_status(truck_stat[i]);
     }
 }
 void truckmenu(Truck Truck_list[])
@@ -55,7 +55,7 @@ void truckmenu(Truck Truck_list[])
     for (int i = 0; i < 9; i++)
     {
         cout<<"\t\t\t";
-        cout<<"Enter "<<num<<" - To Select size "<<Truck_list[i].Truck_size<<endl<<flush;
+        cout<<"Enter "<<num<<" - To Select size "<<Truck_list[i].get_size()<<endl<<flush;
         num++;
     }
 }
