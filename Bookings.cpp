@@ -56,3 +56,11 @@ void Booking::set_status(bool position)
 {
     Payment_status = position;
 }
+Car Booking::set_chosencar(Car chosen)
+{
+    return carname;
+}
+void Booking::set_chosencar(Car chosen)
+{
+    carname = chosen;
+}
