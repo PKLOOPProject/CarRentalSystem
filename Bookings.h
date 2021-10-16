@@ -14,7 +14,7 @@ class Bookings
     void set_sdate(string start);
     void set_edate(string end);
     void set_status(bool position);
-    void set_chosencar();
+    void set_chosencar(Car chosen);
 
     string get_id();
     string get_name();
