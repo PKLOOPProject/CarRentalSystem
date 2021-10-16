@@ -14,7 +14,6 @@ string Bookings::id_maker(int info_booking, Bookings list[])
     cout<<"\t\t\tBooking Start Date: "<<list[info_booking].get_sdate()<<endl;
     cout<<"\t\t\tBooking End Date: "<<list[info_booking].get_edate()<<endl;
     cout<<"\t\t\tBooking Status: "<<list[info_booking].get_status()<<endl;
-    cout<<"\t\t\tBooking Remainder: "<<list[info_booking].get_remainder()<<endl;
 }
 
 string Booking::get_id()
