@@ -14,7 +14,6 @@ class Bookings
     void set_sdate(string start);
     void set_edate(string end);
     void set_status(bool position);
-    void set_remainder();
     void set_chosencar();
 
     string get_id();
@@ -22,7 +21,6 @@ class Bookings
     string get_sdate();
     string get_edate();
     bool get_status();
-    int get_remainder();
     Car get_chosencar();
 
     private:
@@ -31,7 +29,6 @@ class Bookings
     string Booking_date;
     string End_date;
     bool Payment_status; 
-    int remainder;
     Car assigned_car;
 
 };
