@@ -6,6 +6,7 @@ using namespace std;
 #include"Truck.h"
 #include"Bookings.h"
 
+// helps user select the option from the list
 void carmenu(Car list[])
 {
     int num=1;
@@ -20,6 +21,7 @@ void carmenu(Car list[])
     
 }
 
+// strings to store what cars are available
 void start_carload(Car list[])
 {
     string Car_list[10]={"Holden","Kia","Mercedes","Audi","Tesla","Mitsibishi","Volkswagun","Toyota","Nissan","Hyundai"};
@@ -36,6 +38,8 @@ void start_carload(Car list[])
         list[i].set_status(Car_stat[i]);
     }
 }
+
+// strings to store what cars are available
 void start_truckload(Truck list[])
 {
     string truck_color[9]={"White","Grey","Red","Yellow","Blue","Black","Purple","Pearl", "White"};
@@ -47,6 +51,7 @@ void start_truckload(Truck list[])
         list[i].set_status(truck_stat[i]);
     }
 }
+// opens the truck menu
 void truckmenu(Truck Truck_list[])
 {
     cout<<"\t\t\t----------------------------------------------\n";
@@ -59,6 +64,7 @@ void truckmenu(Truck Truck_list[])
         num++;
     }
 }
+// asks user input for booking
 void booking_menu(Bookings list[], int booking_number)
 {
     string firstname,lastname;
@@ -132,6 +138,7 @@ void cancel_car_booking(Bookings list[], Car Car_list[])
                 num++;
             }
         }
+        // lets user input to decide if they want to cancel the booking
         cout<<"Your Choice: ";
         cin>>choice;
         choice=choice-1;
