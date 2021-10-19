@@ -58,7 +58,7 @@ int main()
         cin>>car_or_truck;
 
         // Using while loop for input validation
-        while (car_or_truck<1||car_or_truck>4)
+        while (car_or_truck<1||car_or_truck>5)
         {
             cout<<"Invalid Choice"<<endl;
             cout<<"Please enter choice again: ";
@@ -158,7 +158,7 @@ int main()
             // Clearing Command line
             system("clear");
 
-            // 
+            
             car_list[Selected_Car-1].display_details(Selected_Car-1, car_list);
             if (car_list[Selected_Car-1].get_status()==1)
             {

@@ -111,47 +111,80 @@ void cancel_car_booking(Bookings list[], Car Car_list[])
     int num=1;
     int choice;
     int cancel_decision;
+    bool dec;
+    int return_num;
     for (int i = 0; i < 10; i++)
     {
-        if(Car_list[i].get_status()==false)
+        if (Car_list[i].get_status()==false)
         {
-            cout<<"\t\t\t";
-            cout<<"Enter "<<i+1<<" - To Select "<<Car_list[i].get_maker()<<" "<<Car_list[i].get_model()<<endl<<flush;
-            num++;
+            dec=true;
         }
+        
     }
-    cout<<"Your Choice: ";
-    cin>>choice;
-    choice=choice-1;
-    cout<<"Are you sure you want to cancel the booking (enter 1 for yes, 2 for no): ";
-    cin>>cancel_decision;
-    while (cancel_decision<1||cancel_decision>2)
+    if (dec==true)
     {
-        cout<<"invalid choice"<<endl;
+        for (int i = 0; i < 10; i++)
+        {
+            if(Car_list[i].get_status()==false)
+            {
+                cout<<"\t\t\t";
+                cout<<"Enter "<<i+1<<" - To Select "<<Car_list[i].get_maker()<<" "<<Car_list[i].get_model()<<endl<<flush;
+                num++;
+            }
+        }
         cout<<"Your Choice: ";
+        cin>>choice;
+        choice=choice-1;
+        cout<<"Are you sure you want to cancel the booking (enter 1 for yes, 2 for no): ";
         cin>>cancel_decision;
+        while (cancel_decision<1||cancel_decision>2)
+        {
+            cout<<"invalid choice"<<endl;
+            cout<<"Your Choice: ";
+            cin>>cancel_decision;
+        }
+        Car_list[choice].set_status(true);
     }
-    Car_list[choice].set_status(true);
+    else
+    {
+        cout<<"There are no bookings"<<endl;
+        cout<<"Enter any number to return: ";
+        cin>>return_num;
+    }
+    
+    
 }
 void cancel_truck_booking(Bookings list[], Truck Truck_list[])
 {
     int num=1;
     int choice;
     int cancel_decision;
+    bool dec;
+    int return_num;
     for (int i = 0; i < 10; i++)
     {
-        if(Truck_list[i].get_status()==false)
+        if (Truck_list[i].get_status()==false)
         {
-            cout<<"\t\t\t";
-            cout<<"Enter "<<i+1<<" - To Select "<<Truck_list[i].get_maker()<<" "<<Truck_list[i].get_model()<<endl<<flush;
-            num++;
+            dec=true;
         }
+        
     }
-    cout<<"Your Choice: ";
-    cin>>choice;
-    choice=choice-1;
-    cout<<"Are you sure you want to cancel the booking (enter 1 for yes, 2 for no): ";
-    cin>>cancel_decision;
+    if (dec==true)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            if(Truck_list[i].get_status()==false)
+            {
+                cout<<"\t\t\t";
+                cout<<"Enter "<<i+1<<" - To Select "<<Truck_list[i].get_maker()<<" "<<Truck_list[i].get_model()<<endl<<flush;
+                num++;
+            }
+        }
+        cout<<"Your Choice: ";
+        cin>>choice;
+        choice=choice-1;
+        cout<<"Are you sure you want to cancel the booking (enter 1 for yes, 2 for no): ";
+        cin>>cancel_decision;
     while (cancel_decision<1||cancel_decision>2)
     {
         cout<<"invalid choice"<<endl;
@@ -159,6 +192,17 @@ void cancel_truck_booking(Bookings list[], Truck Truck_list[])
         cin>>cancel_decision;
     }
     Truck_list[choice].set_status(true);
+    }
+    else
+    {
+        cout<<"There are no bookings"<<endl;
+        cout<<"Enter any number to return: ";
+        cin>>return_num;
+    }
+    
+    
+
+    
 }
     
     
