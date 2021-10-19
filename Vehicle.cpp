@@ -6,47 +6,39 @@ using namespace std;
 #include"Car.h"
 #include"Truck.h"
 #include"Bookings.h"
-    void Vehicle::display_details()
+void Vehicle::display_details()
     {
 
     }
-    void Vehicle::set_model(string mod)
+void Vehicle::set_model(string mod)
     {
         Vehicle_model=mod;
     }
-    void Vehicle::set_maker(string company)
+void Vehicle::set_maker(string company)
     {
         Vehicle_maker=company;
     }
-    void Vehicle::set_color(string colour)
+void Vehicle::set_color(string colour)
     {
         Vehicle_color=colour;
     }
-    void Vehicle::set_status(bool stat)
+void Vehicle::set_status(bool stat)
     {
         Vehicle_status=stat;
     }
-    int Vehicle::set_price(int price)
-    {
-        vehicle_price=price;
-    }
-    string Vehicle::get_model()
+string Vehicle::get_model()
     {
         return Vehicle_model;
     }
-    string Vehicle::get_maker()
+string Vehicle::get_maker()
     {
         return Vehicle_maker;
     }
-    string Vehicle::get_color()
+string Vehicle::get_color()
     {
         return Vehicle_color;
     }
-    bool Vehicle::get_status()
+bool Vehicle::get_status()
     {
         return Vehicle_status;
-    }
-    int Vehicle::get_price()
-    {
-        return vehicle_price;
     }
