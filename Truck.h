@@ -6,10 +6,12 @@
 using namespace std;
 class Truck: public Vehicle
 {
+    // public functions
     public:
     void display_details(int selected_size,Truck list[]);
     void set_size(int siz);
     int get_size();
+    // private functions
     private:
     int Truck_size;
 
