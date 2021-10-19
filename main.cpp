@@ -11,64 +11,154 @@ extern void carmenu(Car object[10]);
 extern void start_carload(Car object[10]);
 extern void truckmenu(Truck Truck_list[]);
 extern void start_truckload(Truck list[]);
+extern void booking_menu(Bookings list[], int booking_number);
+extern void cancel_car_booking(Bookings list[],Car Car_list[]);
+extern void cancel_truck_booking(Bookings list[],Truck Truck_list[]);
 int main()
 {
+    // defining object lists 
     Car car_list[10];
     Truck Truck_list[9];
-    int car_or_truck=1;
-    start_carload(car_list);
-    start_truckload(Truck_list);
+    Bookings Booking_list_car[10];
+    Bookings Booking_list_truck[9];
+
+    // initialsing variables
+    int car_or_truck=0;
     string decision="yes";
     int book_decision=0;
     int truck_book_decision=0;
-    
-    
+    int booking_number=1;
+    int booking_truck_number=1;
+    int final_decision=0;
+    string main=" ";
+    // Functions to popuate object lists
+    start_carload(car_list);
+    start_truckload(Truck_list);
+
+
+    // while loop used to make sure the program runs until asked to close
     while (decision!="exit")
     {   
-        if (car_or_truck!=1||car_or_truck!=2)
-        {
-            cout<<"Invalid Choice"<<endl;
-        }
+        system("clear");
+        // assigning values to variables so they reset when loop restarts
+        car_or_truck=0;
+        book_decision=0;
+
+        // displaying options to choose from
         cout<<"\t\t\t----------------------------------------------\n";
         cout<<"\t\t\tWelcome to the OOP car rental Company ,Choose the vehicle type you would like from the menu : "<<endl;
         cout<<"\t\t\tEnter 1 for Truck"<<endl;
         cout<<"\t\t\tEnter 2 for Car"<<endl;
+        cout<<"\t\t\tEnter 3 to Cancel Car Booking"<<endl;
+        cout<<"\t\t\tEnter 4 to Cancel Truck Booking"<<endl;
+        cout<<"\t\t\tEnter 5 to exit"<<endl;
+        
+        // taking input
         cout<<"Your Choice: ";
         cin>>car_or_truck;
+
+        // Using while loop for input validation
+        while (car_or_truck<1||car_or_truck>4)
+        {
+            cout<<"Invalid Choice"<<endl;
+            cout<<"Please enter choice again: ";
+            cin>>car_or_truck;
+        }
+
+        // using clear in terminal to clear screen
+        system("clear");
+
+        // if statemnent to check what option was chosen by user
         if (car_or_truck==1)
         {
+            // displaying truck menu where user can select the size of truck they would like to rent
             truckmenu(Truck_list);
+            
+            // Taking input for the size selected
             int selected_size;
             cout<<"Your Choice: ";
             cin>>selected_size;
+
+            // input validation using while loop
             while(selected_size<=0||selected_size>=10)
             {
                 cout<<"Please Enter Choice Again"<<endl;
                 cout<<"Your Choice: ";
                 cin>>selected_size;
             }
+
+            // Using clear to clear terminal
             system("clear");
+
+            // using function defined in object class to display details of the truck selected
             Truck_list[selected_size-1].display_details(selected_size-1,Truck_list);
+
+            // if statement to check if the truck is avalaible. If it is, it will offer options
             if (Truck_list[selected_size-1].get_status()==1)
             {
                 cout<<"Would you Like to book this one??"<<endl;
                 cout<<"Enter 1 for yes, 2 for no: ";
                 cin>>book_decision;
             }
+
+            // if the truck isnt avalaible. it will let the user know
+            else if (Truck_list[selected_size-1].get_status()==0)
+            {
+                int cont;
+                cout<<"This truck is not avaliable. Please choose another one"<<endl;
+                cout<<"Enter any number to continue: ";
+                cin>>cont;
+            }
+
+            // if the user decides that they would like to book the truck
+            if (book_decision==1)
+            {
+                // function to ask for customers info. 
+                booking_menu(Booking_list_truck,selected_size);
+                
+                // function to show booking info and confirm from the user
+                Booking_list_truck[selected_size-1].get_booking_info(selected_size,Booking_list_truck);
+                
+                // Final booking confirmation
+                cout<<"Would you like to finailise your booking (Enter 1 for yes, 2 for no): ";
+                cin>>final_decision;
+
+                // if statement to confirm user choice
+                if (final_decision==1)
+                {
+                    cout<<"Your booking has been finalised"<<endl;
+                    Truck_list[selected_size-1].set_status(false);
+                    cout<<"Enter 1 to return to main menu: "<<endl;
+                    cin>>main;
+                    system("clear");
+                }
+            }
         }
+        // else if statement used if customer wanted to rent a car
         else if (car_or_truck==2)
         {
+            // Declaring variable
+            int Selected_Car=0;
+
+            // Function to display the car menu
             carmenu(car_list);
-            int Selected_Car;
+            
+            // getting input from user
             cout<<"Your Choice: ";
             cin>>Selected_Car;
+
+            // Using while loop for input validation
             while(Selected_Car<=0||Selected_Car>=11)
             {
                 cout<<"Please Enter Choice Again"<<endl;
                 cout<<"Your Choice: ";
                 cin>>Selected_Car;
             }
+
+            // Clearing Command line
             system("clear");
+
+            // 
             car_list[Selected_Car-1].display_details(Selected_Car-1, car_list);
             if (car_list[Selected_Car-1].get_status()==1)
             {
@@ -82,12 +172,38 @@ int main()
             }
             if (book_decision==1)
             {
-
+                booking_menu(Booking_list_car,Selected_Car);
+                
+                Booking_list_car[Selected_Car-1].get_booking_info(Selected_Car,Booking_list_car);
+                cout<<"Would you like to finailise your booking (Enter 1 for yes, 2 for no): ";
+                cin>>final_decision;
+                if (final_decision==1)
+                {
+                    cout<<"Your booking has been finalised"<<endl;
+                    cout<<"Enter 1 to return to main menu"<<endl;
+                    cin>>main;
+                    car_list[Selected_Car-1].set_status(false);
+                    system("clear");
+                }
+                
             }
             else if (book_decision==2)
             {
                 
             }
         }
+        else if (car_or_truck==3)
+        {
+            cancel_car_booking(Booking_list_car, car_list);
+        }
+        else if (car_or_truck==4)
+        {
+            cancel_truck_booking(Booking_list_truck,Truck_list);
+        }
+        else if (car_or_truck==5)
+        {
+            decision="exit";
+        }
     }
+    cout<<"Brought to you by Priyansh, Kirat and Lara";
 }

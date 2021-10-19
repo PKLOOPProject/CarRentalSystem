@@ -7,60 +7,66 @@ using namespace std;
 #include"Truck.h"
 #include"Bookings.h"
 
-string Bookings::id_maker(int info_booking, Bookings list[])
+void Bookings::get_booking_info(int info_booking, Bookings list[])
 {
     cout<<"Your booking details are: "<<endl;
-    cout<<"\t\t\tName: "<<list[info_booking].get_name()<<endl; 
-    cout<<"\t\t\tBooking Start Date: "<<list[info_booking].get_sdate()<<endl;
-    cout<<"\t\t\tBooking End Date: "<<list[info_booking].get_edate()<<endl;
-    cout<<"\t\t\tBooking Status: "<<list[info_booking].get_status()<<endl;
+    cout<<"\t\t\tName: "<<list[info_booking-1].get_firstname()<<" "<<list[info_booking-1].get_lastname()<<endl; 
+    cout<<"\t\t\tBooking Start Date: "<<list[info_booking-1].get_sdate()<<"-"<<list[info_booking-1].get_smonth()<<endl;
+    cout<<"\t\t\tBooking End Date: "<<list[info_booking-1].get_edate()<<"-"<<list[info_booking-1].get_emonth()<<endl;
 }
-
-string Booking::get_id()
+string Bookings::get_id()
 {
     return Booking_id;
 }
-void Booking::set_id(string lan)
+void Bookings::set_id(string lan)
 {
     Booking_id = lan;
 }
-string Booking::get_name()
+string Bookings::get_firstname()
 {
-    return Booking_name;
+    return Booking_firstname;
 }
-void Booking::set_name(string fullname)
+void Bookings::set_firstname(string firstname)
 {
-    Booking_name = fullname;
+    Booking_firstname = firstname;
 }
-string Booking::get_sdate()
+int Bookings::get_sdate()
 {
     return Booking_date;
 }
-void Booking::set_sdate(string start)
+void Bookings::set_sdate(int start)
 {
     Booking_date = start;
 }
-string Booking::get_edate()
+int Bookings::get_edate()
 {
     return End_date;
 }
-void Booking::set_edate(string end)
+void Bookings::set_edate(int end)
 {
     End_date = end;
 }
-bool Booking::get_status()
+void Bookings::set_smonth(int month)
 {
-    return Payment_status;
+    Booking_month=month;
 }
-void Booking::set_status(bool position)
+int Bookings::get_smonth()
 {
-    Payment_status = position;
+    return Booking_month;
 }
-Car Booking::set_chosencar(Car chosen)
+int Bookings::get_emonth()
 {
-    return carname;
+    return End_month;
 }
-void Booking::set_chosencar(Car chosen)
+void Bookings::set_emonth(int month)
 {
-    carname = chosen;
+    End_month=month;
+}
+string Bookings::get_lastname()
+{
+    return Booking_lastname;
+}
+void Bookings::set_lastname(string lastname)
+{
+    Booking_lastname=lastname;
 }
