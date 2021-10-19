@@ -6,7 +6,9 @@
 using namespace std;
 class Bookings
 {
+    // public functions
     public:
+    // set functions for inputs
     void get_booking_info(int info_booking, Bookings list[]);
     void set_id(string lan);
     void set_firstname(string firstname);
@@ -18,6 +20,7 @@ class Bookings
     void set_status(bool position);
     void set_chosencar(Car chosen);
 
+    // set functions for inputs
     string get_id();
     string get_firstname();
     string get_lastname();
@@ -28,6 +31,7 @@ class Bookings
     bool get_status();
     Car get_chosencar();
 
+    // private functions
     private:
     string Booking_id;
     string Booking_firstname;
