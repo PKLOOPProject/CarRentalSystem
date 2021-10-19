@@ -5,6 +5,7 @@
 using namespace std;
 class Vehicle
 {
+    // public functions
     public:
     virtual void display_details();
     void set_model(string mod);
@@ -15,6 +16,7 @@ class Vehicle
     string get_maker();
     string get_color();
     bool get_status();
+    // private functions
     private:
     string Vehicle_model;
     string Vehicle_maker;
