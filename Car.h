@@ -13,7 +13,7 @@ class Car: public Vehicle
     void set_car_seats(int number);
     string get_car_type();
     void set_car_type(string type);
-    // private functions
+    // private variables
     private:
     int carseats;
     string cartype;

@@ -11,7 +11,7 @@ class Truck: public Vehicle
     void display_details(int selected_size,Truck list[]);
     void set_size(int siz);
     int get_size();
-    // private functions
+    // private variables
     private:
     int Truck_size;
 

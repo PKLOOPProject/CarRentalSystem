@@ -17,8 +17,6 @@ class Bookings
     void set_smonth(int month);
     void set_edate(int end);
     void set_emonth(int month);
-    void set_status(bool position);
-    void set_chosencar(Car chosen);
 
     // set functions for inputs
     string get_id();
@@ -28,10 +26,8 @@ class Bookings
     int get_smonth();
     int get_edate();
     int get_emonth();
-    bool get_status();
-    Car get_chosencar();
 
-    // private functions
+    // private variables
     private:
     string Booking_id;
     string Booking_firstname;

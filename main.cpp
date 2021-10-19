@@ -158,25 +158,38 @@ int main()
             // Clearing Command line
             system("clear");
 
-            
+            // function used to display details of the car selected by user
             car_list[Selected_Car-1].display_details(Selected_Car-1, car_list);
+
+            // if statement to check if the car is avaliable
             if (car_list[Selected_Car-1].get_status()==1)
             {
+                // user input 
                 cout<<"Would you Like to book this one??"<<endl;
                 cout<<"Enter 1 for yes, 2 for no: ";
                 cin>>book_decision;
             }
+
+            // else if statement used if the car is unavaliable
             else if (car_list[Selected_Car-1].get_status()==0)
             {
                 cout<<"This car is not avaliable. Please choose another one"<<endl;
             }
+
+            // if user selects yes to booking, this if statement will execute
             if (book_decision==1)
             {
+                // Booking menu fucntion used to get info. Function can be found in the function file
                 booking_menu(Booking_list_car,Selected_Car);
                 
+                // function used to display the booking details entered
                 Booking_list_car[Selected_Car-1].get_booking_info(Selected_Car,Booking_list_car);
+
+                // asking for final confirmation
                 cout<<"Would you like to finailise your booking (Enter 1 for yes, 2 for no): ";
                 cin>>final_decision;
+
+                // if statement if the user chooses yes. 
                 if (final_decision==1)
                 {
                     cout<<"Your booking has been finalised"<<endl;
