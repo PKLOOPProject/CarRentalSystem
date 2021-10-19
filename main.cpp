@@ -192,14 +192,20 @@ int main()
                 // if statement if the user chooses yes. 
                 if (final_decision==1)
                 {
+                    // Giving Confirmation to user
                     cout<<"Your booking has been finalised"<<endl;
                     cout<<"Enter 1 to return to main menu"<<endl;
                     cin>>main;
+
+                    // setting selected car status to unavailable
                     car_list[Selected_Car-1].set_status(false);
+
+                    // clearing terminal screen
                     system("clear");
                 }
                 
             }
+            // using else if for book decision. If user selects no, 
             else if (book_decision==2)
             {
                 

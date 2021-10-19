@@ -23,14 +23,6 @@ void Car::display_details(int selected_car,Car list[])
     
     
 }
-int Car::get_car_seats()
-{
-    return carseats;
-}
-void Car::set_car_seats(int number)
-{
-    carseats=number;
-}
 string Car::get_car_type()
 {
     return cartype;
