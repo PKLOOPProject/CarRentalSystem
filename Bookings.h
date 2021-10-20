@@ -10,16 +10,14 @@ class Bookings
     public:
     // set functions for inputs
     void get_booking_info(int info_booking, Bookings list[]);
-    void set_id(string lan);
     void set_firstname(string firstname);
     void set_lastname(string lastname);
     void set_sdate(int date);
     void set_smonth(int month);
     void set_edate(int end);
-    void set_emonth(int month);
+    void set_emonth(int emonth);
 
     // set functions for inputs
-    string get_id();
     string get_firstname();
     string get_lastname();
     int get_sdate();
@@ -29,7 +27,6 @@ class Bookings
 
     // private variables
     private:
-    string Booking_id;
     string Booking_firstname;
     string Booking_lastname;
     int Booking_date;

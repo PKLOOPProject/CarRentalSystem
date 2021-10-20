@@ -205,20 +205,24 @@ int main()
                 }
                 
             }
-            // using else if for book decision. If user selects no, 
+            // using else if for book decision. If user selects no, the program restarts
             else if (book_decision==2)
             {
                 
             }
         }
+
+        // if user selects cancel car booking, the function will run. The function can be found in function.cpp
         else if (car_or_truck==3)
         {
             cancel_car_booking(Booking_list_car, car_list);
         }
+        // if user selects cancel truck booking, the function will run. The function can be found in function.cpp
         else if (car_or_truck==4)
         {
             cancel_truck_booking(Booking_list_truck,Truck_list);
         }
+        // if user selects exit, the decision string will be changed and the while loop will stop
         else if (car_or_truck==5)
         {
             decision="exit";
