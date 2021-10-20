@@ -7,6 +7,9 @@ using namespace std;
 #include"Truck.h"
 #include"Bookings.h"
 
+
+
+
 extern void carmenu(Car object[10]);
 extern void start_carload(Car object[10]);
 extern void truckmenu(Truck Truck_list[]);
@@ -16,6 +19,7 @@ extern void cancel_car_booking(Bookings list[],Car Car_list[]);
 extern void cancel_truck_booking(Bookings list[],Truck Truck_list[]);
 int main()
 {
+
     // defining object lists 
     Car car_list[10];
     Truck Truck_list[9];
@@ -173,7 +177,10 @@ int main()
             // else if statement used if the car is unavaliable
             else if (car_list[Selected_Car-1].get_status()==0)
             {
+                   int cont;
                 cout<<"This car is not avaliable. Please choose another one"<<endl;
+                cout<<"Enter any number to continue: ";
+                cin>>cont;
             }
 
             // if user selects yes to booking, this if statement will execute

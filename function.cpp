@@ -64,6 +64,7 @@ void truckmenu(Truck Truck_list[])
 {
     cout<<"\t\t\t----------------------------------------------\n";
     cout<<"\t\t\tWelcome to the OOP truck rental company ,Choose the truck size you would like from the menu : "<<endl<<flush;
+    cout<<"\t\t\tAll sizes are in cubic meters"<<endl;
     int num=1;
 
     // for loop to show the options to the user
